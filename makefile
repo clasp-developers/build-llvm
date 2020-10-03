@@ -16,7 +16,7 @@ macos:
 	-DLLVM_INSTALL_UTILS=ON \
 	-DLLVM_OPTIMIZED_TABLEGEN=ON \
 	-DLLVM_TARGETS_TO_BUILD=all \
-	-DLLVM_ENABLE_PROJECTS=clang \
+	-DLLVM_ENABLE_PROJECTS="libcxx;libcxxabi;clang" \
 	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 	-DWITH_POLLY=ON \
 	-DFFI_INCLUDE_DIR=/usr/local/Cellar/libffi/3.2.1/lib/libffi-3.2.1/include \
@@ -48,3 +48,7 @@ linux:
 	-DWITH_POLLY=ON \
 	-DLLDB_DISABLE_PYTHON=1 \
 	-DLIBOMP_INSTALL_ALIASES=OFF ../llvm )
+
+
+clean:
+	rm -rf ./build/*
