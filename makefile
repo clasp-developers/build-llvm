@@ -1,4 +1,7 @@
 
+getllvm:
+	git checkout 7ee96429a0b057bcc97331a6a762fc3cd00aed61
+
 macos:
 	(cd build; cmake -G "Ninja" \
 	-DCMAKE_INSTALL_PREFIX=/opt/llvm-project-tot \
@@ -23,7 +26,7 @@ macos:
 	-DFFI_LIBRARY_DIR=/usr/local/Cellar/libffi/3.2.1/lib \
 	-DLLVM_CREATE_XCODE_TOOLCHAIN=ON \
 	-DLLDB_USE_SYSTEM_DEBUGSERVER=ON \
-	-DLLDB_DISABLE_PYTHON=1 \
+	-DLLDB_DISABLE_PYTHON=0 \
 	-DLIBOMP_INSTALL_ALIASES=OFF ../llvm )
 
 
@@ -53,7 +56,6 @@ linux:
 	-DLLVM_ENABLE_PROJECTS="libunwind;clang" \
 	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 	-DWITH_POLLY=ON \
-	-DLLDB_DISABLE_PYTHON=1 \
 	-DLIBOMP_INSTALL_ALIASES=OFF ../llvm )
 
 
